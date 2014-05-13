@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>TupiTupi - online tuppi game.</title>
+  <link href="stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+  <link href="stylesheets/print.css" media="print" rel="stylesheet" type="text/css" />
+  <!--[if IE]>
+    <link href="/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+  <![endif]-->
+  <script src="http://localhost:8080/socket.io/socket.io.js"></script>
+  <script src="http://code.jquery.com/jquery-1.8.0.min.js"></script>
+  <script src="client.js"></script>
+  <script src="flowtype.js"></script>
+  <script src="layout.js"></script>
+</head>
+<body>
+<div id="wrapper">
+  <div id="login-screen" class="centered">	
+    <h1>Welcome To TupiTupi!</h1>
+    <h3>Give me your nickname and start playing.</h3>
+    <div id="login-screen-buttons" class="clearfix">
+      <input type="text" id="nickname-box" />
+      <input type="submit" id="connect-button" value="Connect"/>
+      <p id="nickname-error">Nickname already in use</p>
+    </div>
+  </div>
+  <div id="lobby">
+    <div id="message-screen">
+      <div id="messages">
+      </div>
+      <div id="write-message">
+        <h3>Write a message:</h3>
+        <input id="messagebox" type="text" />
+        <input type="submit" value="submit" id="message-submit" />
+      </div>
+    </div>
+    <div id="create-game-screen" class="centered">
+      <h2>Setup a new game</h2>
+      <table>
+        <tbody>
+        <tr>
+          <td><p id="create-game-name">Name of the game:</p></td>
+          <td><input id="create-game-name-input" type="input" /></td>
+        </tr>
+        <tr>
+          <td><p id="create-game-private">Password (optional):</p></td>
+          <td><input id="create-game-password-input" type="input"></td>
+        </tr>
+        </tbody>
+      </table>
+      <input id="create-game-submit" type="submit" value="Create a new game" />
+    </div>
+    <div id="game-lounge" class="centered">
+      <h2>Waiting for game to begin</h2>
+      <table id="team-select">
+        <tbody>
+        <tr>
+          <td>Select team:</td>
+          <td>
+            <select id="team-select-menu" name="team">
+              <option value=""></option>
+              <option value="1">Team 1</option>
+              <option value="2">Team 2</option>
+            </select>
+          </td>
+      </table>
+      <div id="joined-players">
+        <h3>Joined players:</h3>
+        <table id="joined-players-list">
+          <thead>
+            <tr>
+              <th><p>Nickname</p></th>
+              <th><p>Team</p></th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </div>
+      <input id="start-game-button" type="submit" value="Start game" />
+      <input id="join-game-button" type="submit" value="Join game" />
+      <input id="leave-game-button" type="submit" value="Leave game" />
+      <input id="cancel-game-button" type="submit" value="Cancel game" />
+    </div>
+    <div id="users-and-games">
+      <div id="gamelist">
+        <h3>Games</h3>
+      </div>
+      <div id="userlist">
+        <h3>Users</h3>
+      </div>
+      <div id="menu-buttons">
+        <input type="submit" id="create-game-button" value="Create game" />
+        <input type="submit" id="help-button" value="Help" />
+      </div>
+    </div><!-- #users-and-games -->
+  </div><!-- #lobby -->
+</div><!-- #wrapper -->
+</body>
+</html>

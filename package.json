@@ -1,0 +1,33 @@
+{
+  "name": "tupitupi",
+  "version": "0.0.0",
+  "description": "Online Tuppi",
+  "main": "server.js",
+  "scripts": {
+    "test": "gulp lint",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/dorjeozer/tupitupi.git"
+  },
+  "keywords": [
+    "tuppi",
+    "card game"
+  ],
+  "author": "Jesse Sipola",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dorjeozer/tupitupi/issues"
+  },
+  "homepage": "https://github.com/dorjeozer/tupitupi",
+  "engines": {
+    "npm": ">=1.4.3",
+    "node": ">= 0.10.26"
+  },
+  "dependencies": {
+    "express": ">= 4.0.0",
+    "socket.io": ">= 0.9.16",
+    "node-static": ">= 0.7.3"
+  }
+}
